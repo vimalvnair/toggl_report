@@ -13,7 +13,7 @@ TELEGRAM_BOT_API_KEY = ENV['TELEGRAM_BOT_API_KEY']
 
 get '/' do
   content_type :json
-  today = Date.today
+  today = Time.now.getlocal("+05:30").to_date
   yesterday = today - 1
   start_time = Time.new(yesterday.year, yesterday.month, yesterday.day, 0,0,0, "+05:30").to_time.iso8601
   end_time = Time.new(today.year, today.month, today.day, 0,0,0, "+05:30").to_time.iso8601
